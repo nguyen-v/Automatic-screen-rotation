@@ -32,7 +32,7 @@ Operating system: Windows 10
 ## Setup process
 1. Unzip the source folder
 2. Install Python
-    - Install listed libraries
+    - Install listed modules
 3. Install VSCode and PlatformIO
     - Install listed libraries
 4. Plug in the board (USB) and upload (arrow at bottom left)
