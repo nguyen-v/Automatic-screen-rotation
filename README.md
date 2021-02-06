@@ -23,11 +23,10 @@ If you get unresolved imports, see: https://stackoverflow.com/q/53939751
 #### Libraries
     - Arduino_LSM6DS3
     - Adafruit_SleepyDog
-
-|Board:            |   Arduino Nano 33 IoT                                          |
-|Sensor            |   LSM6DS3 Accelerometer and Gyroscope (included in the board)  |
-|Connection type:  |   Serial USB                                                   |
-|Operating system: |   Windows 10                                                   |
+    
+| Board             | Sensor               |
+|-------------------|----------------------|
+|Arduino Nano 33 IoT| LSM6DS3 Accelerometer and Gyroscope (included in the board)  | 
 
 ## Setup process
 1. Unzip the source folder
