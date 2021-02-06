@@ -29,7 +29,7 @@ Sensor            LSM6DS3 Accelerometer and Gyroscope (included in the board)
 Connection type:  Serial USB
 Operating system: Windows 10
 
-## Setup processe
+## Setup process
 1. Unzip the source folder
 2. Install Python
     - Install listed libraries
