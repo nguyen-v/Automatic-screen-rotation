@@ -37,7 +37,7 @@ If you get unresolved imports, see: https://stackoverflow.com/q/53939751
 4. Plug in the board (USB) and upload (arrow at bottom left)
 5. Create a startup task in task scheduler
 https://www.jcchouinard.com/python-automation-using-task-scheduler/
-Use pythonw.exe for background process, usually located at e.g.
+Use pythonw.exe for creating a background process (start at logon), usually located at e.g.
 C:\Python39\pythonw.exe
 
 6. Change the settings in rotate_screen_config.ini
