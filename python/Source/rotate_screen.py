@@ -29,9 +29,6 @@ import win32api                         # get the number of screens
 
 ### Global Constants ###########################################################
 
-# Choose your configuration mode here
-# You can create a custom mode in the configuration file
-CONFIG_MODE                     = "ONLY_XY"
 CONFIG_FILENAME                 = "rotate_screen_config.ini"
 
 ACCEL_THR_MIN                   = 0
