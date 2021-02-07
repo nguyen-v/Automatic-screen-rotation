@@ -15,6 +15,7 @@
 ### IMPORTS ####################################################################
 
 import sys
+import subprocess
 import os                               # file paths
 import serial                           # serial connection with Arduino
 import serial.tools.list_ports          # detection of serial ports
@@ -29,7 +30,7 @@ import win32api                         # get the number of screens
 
 ### Global Constants ###########################################################
 
-CONFIG_FILENAME                 = "rotate_screen_config.ini"
+CONFIG_FILENAME                 = "Python/rotate_screen_config.ini"
 
 ACCEL_THR_MIN                   = 0
 ACCEL_THR_MAX                   = 1     # greater than 1 for no detection
@@ -135,8 +136,8 @@ class ConfigurationData:
         error_count = 0
         while error_count <= ERROR_COUNT_TIMEOUT:
             value_error = False
-            self.filename   = filename
-            if os.path.isfile(filename):
+            if os.path.isfile("C:/Users/41786/Desktop/Projects/Automatic-screen-rotation/python/Source/rotate_screen_config.ini"):
+                self.filename   = filename
                 config = ConfigParser()
                 config.read(filename)
 
@@ -458,8 +459,6 @@ def checkConnection(port, config_mode, config_filename, data,
 
 def main():
     global ser
-    # config_filename = CONFIG_FILENAME
-    # config_mode     = CONFIG_MODE
     data = ConfigurationData(CONFIG_FILENAME)
     # Initialize serial connection with Arduino board
     port, ser = data.initSerial()
@@ -468,7 +467,7 @@ def main():
     config_token    = ConfigurationToken()
     receive_token   = ReceiveDataToken()
     check_connection = threading.Thread(target=checkConnection, 
-                                        args = (port, CONFIG_MODE, CONFIG_FILENAME, data, 
+                                        args = (port, data.mode, CONFIG_FILENAME, data, 
                                         config_token, receive_token))
     check_connection.setDaemon(True)
     check_connection.start()
@@ -542,7 +541,7 @@ def main():
                 else:
                     command = "display64.exe " + monitor + angle + position
                     # shell = True to prevent apparition of console
-                    call(command, shell=True)
+                    subprocess.call(command, shell=True)
         time.sleep(CHECK_CONNECTION_INTERVAL)
 
     
