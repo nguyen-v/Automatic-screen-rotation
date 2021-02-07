@@ -8,7 +8,7 @@ A Python and C++ utility for automatic screen rotation.
 
 ## Requirements:
 
-### Python 3.x
+### Python 3.x (or use executable)
 #### Packages:
     - PySerial
     - win32api
