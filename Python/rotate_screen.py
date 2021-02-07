@@ -15,7 +15,6 @@
 ### IMPORTS ####################################################################
 
 import sys
-import subprocess
 import os                               # file paths
 import serial                           # serial connection with Arduino
 import serial.tools.list_ports          # detection of serial ports
@@ -136,11 +135,11 @@ class ConfigurationData:
         error_count = 0
         while error_count <= ERROR_COUNT_TIMEOUT:
             value_error = False
-            filename = "Python/" + filename
-            if os.path.isfile(filename):
-                self.filename   = filename
+            path = "Python/" + filename
+            if os.path.isfile(path):
+                self.filename   = path
                 config = ConfigParser()
-                config.read(filename)
+                config.read(path)
 
                 # Mode
                 self.mode = config['MODE']['Mode']
@@ -540,9 +539,9 @@ def main():
                 if all(param == "" for param in [angle, pos_x, pos_y]):
                     continue
                 else:
-                    command = "display64.exe " + monitor + angle + position
+                    command = "Python\display64.exe " + monitor + angle + position
                     # shell = True to prevent apparition of console
-                    subprocess.call(command, shell=True)
+                    call(command, shell=True)
         time.sleep(CHECK_CONNECTION_INTERVAL)
 
     
