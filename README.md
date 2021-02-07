@@ -11,7 +11,7 @@ A Python and C++ utility for automatic screen rotation.
 ### Python 3.x
 #### Packages:
     - PySerial
-    - wmi
+    - win32api
 
 If access is denied, try:
 python -m pip install <package> 
