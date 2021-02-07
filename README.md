@@ -4,6 +4,7 @@ A Python and C++ utility for automatic screen rotation.
 ## Features
 - Automatic port detection and automatic (re)connection to the Arduino board
 - Screen orientation and position customizable for each of the 5 physical orientations (portrait, portrait flipped, landscape, landscape flipped and flat) using a configuration file
+- Control over rotation threshold and sample rates
 
 ## Requirements:
 
