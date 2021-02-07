@@ -544,7 +544,7 @@ def main():
                     continue
                 else:
                     command = "display64.exe " + monitor + angle + position
-                    # shell = True to prevent display64.exe console to appear
+                    # shell = True to prevent apparition of console
                     call(command, shell=True)
         time.sleep(CHECK_CONNECTION_INTERVAL)
 
