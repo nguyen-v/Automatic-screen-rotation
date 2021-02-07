@@ -31,16 +31,23 @@ If you get unresolved imports, see: https://stackoverflow.com/q/53939751
 
 ## Setup process
 1. Unzip the source folder
+
+#### Python
 2. Install Python
     - Install listed modules
-3. Install VSCode and PlatformIO
-    - Install listed libraries
-4. Plug in the board (USB) and upload (arrow at bottom left)
-5. Create a startup task in task scheduler
+3. Create a startup task in task scheduler
 https://www.jcchouinard.com/python-automation-using-task-scheduler/
 Use pythonw.exe for creating a background process (start at logon), usually located at e.g.
 C:\Python39\pythonw.exe
 
+Alternatively, if you don't have Python installed, use the .exe file
+
+#### Arduino and PlatformIO
+3. Install VSCode and PlatformIO
+    - Install listed libraries
+4. Plug in the board (USB) and upload (arrow at bottom left)
+
+#### Configuration file and debugging
 6. Change the settings in rotate_screen_config.ini
     - You can execute the python script in a console for debugging purposes 
     with py .\rotate_screen.py (open the terminal in the Source folder)
