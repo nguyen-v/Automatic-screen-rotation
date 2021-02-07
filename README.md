@@ -50,4 +50,4 @@ Alternatively, if you don't have Python installed, use the .exe file
 #### Configuration file and debugging
 6. Change the settings in rotate_screen_config.ini
     - You can execute the python script in a console for debugging purposes 
-    with py .\rotate_screen.py (open the terminal in the Source folder)
+    with py .\rotate_screen.py (open the terminal in the Source folder) or open rotate_screen_console.exe
