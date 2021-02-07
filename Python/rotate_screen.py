@@ -30,7 +30,7 @@ import win32api                         # get the number of screens
 
 ### Global Constants ###########################################################
 
-CONFIG_FILENAME                 = "Python/rotate_screen_config.ini"
+CONFIG_FILENAME                 = "rotate_screen_config.ini"
 
 ACCEL_THR_MIN                   = 0
 ACCEL_THR_MAX                   = 1     # greater than 1 for no detection
@@ -136,7 +136,8 @@ class ConfigurationData:
         error_count = 0
         while error_count <= ERROR_COUNT_TIMEOUT:
             value_error = False
-            if os.path.isfile("C:/Users/41786/Desktop/Projects/Automatic-screen-rotation/python/Source/rotate_screen_config.ini"):
+            filename = "Python/" + filename
+            if os.path.isfile(filename):
                 self.filename   = filename
                 config = ConfigParser()
                 config.read(filename)
