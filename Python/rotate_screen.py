@@ -449,8 +449,11 @@ def checkConnection(port, config_mode, config_filename, data,
             # Sending "Connected" message to Arduino to reset watchdog timer
             elif config_token.config_sent:
                 ser.reset_output_buffer()
-                ser.write(CONNECTED_MESSAGE.encode())
-                ser.write(("\n").encode())
+                try:
+                    ser.write(CONNECTED_MESSAGE.encode())
+                    ser.write(("\n").encode())
+                except Exception: # to avoid timeout
+                    pass
             # print(ready_message)
         time.sleep(CHECK_CONNECTION_INTERVAL)
         
