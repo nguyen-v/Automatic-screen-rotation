@@ -37,12 +37,12 @@ void setup() {
 
   // Blink built-in LED at startup for debugging purposes
   pinMode(LED_BUILTIN, OUTPUT);
-  for(int i = 0; i < 3; ++i) {
-    // digitalWrite(LED_BUILTIN, HIGH);
-    // delay(500);
-    // digitalWrite(LED_BUILTIN, LOW);
-    // delay(500);
-  }
+  // for(int i = 0; i < 3; ++i) {
+  //   digitalWrite(LED_BUILTIN, HIGH);
+  //   delay(500);
+  //   digitalWrite(LED_BUILTIN, LOW);
+  //   delay(500);
+  // }
 
   // Initiate serial connection
   Serial.begin(BAUD_RATE);
