@@ -308,17 +308,21 @@ class ConfigurationData:
             # os._exit(1)
             
     def sendConfigParameters(self, ser):
-        ser.reset_input_buffer()
-        ser.reset_output_buffer()
-        # time.sleep(0.1)
-        # add new line character to integers for proper separation
-        ser.write((str(self.sampling_rate)+"\n").encode())
-        ser.write((str(self.number_stable_samples)+"\n").encode())
-        ser.write(str(self.x_threshold).encode())
-        ser.write(("\n").encode())
-        ser.write(str(self.y_threshold).encode())
-        ser.write(("\n").encode())
-        ser.write(str(self.z_threshold).encode())
+        try:
+            ser.reset_input_buffer()
+            ser.reset_output_buffer()
+            # time.sleep(0.1)
+            # add new line character to integers for proper separation
+            ser.write((str(self.sampling_rate)+"\n").encode())
+            ser.write((str(self.number_stable_samples)+"\n").encode())
+            ser.write(str(self.x_threshold).encode())
+            ser.write(("\n").encode())
+            ser.write(str(self.y_threshold).encode())
+            ser.write(("\n").encode())
+            ser.write(str(self.z_threshold).encode())
+        # fall back on default built-in values if an error occurs
+        except Exception:
+            pass
 
 
 ### Functions ##################################################################
