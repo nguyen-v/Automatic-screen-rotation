@@ -135,7 +135,7 @@ class ConfigurationData:
         error_count = 0
         while error_count <= ERROR_COUNT_TIMEOUT:
             value_error = False
-            path = "Python/" + filename
+            path = filename
             if os.path.isfile(path):
                 self.filename   = path
                 config = ConfigParser()
@@ -546,7 +546,7 @@ def main():
                 if all(param == "" for param in [angle, pos_x, pos_y]):
                     continue
                 else:
-                    command = "Python\display64.exe " + monitor + angle + position
+                    command = "display64.exe " + monitor + angle + position
                     # shell = True to prevent apparition of console
                     call(command, shell=True)
         time.sleep(CHECK_CONNECTION_INTERVAL)
