@@ -456,7 +456,7 @@ def checkConnection(port, config_mode, config_filename, data,
                 try:
                     ser.write(CONNECTED_MESSAGE.encode())
                     ser.write(("\n").encode())
-                except Exception: # to avoid timeout
+                except serial.SerialTimeoutException: # to avoid timeout
                     pass
             # print(ready_message)
         time.sleep(CHECK_CONNECTION_INTERVAL)
